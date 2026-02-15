@@ -1261,6 +1261,131 @@ img {
 }
 
 /* ============================================
+   FAQ
+   ============================================ */
+.faq {
+    background: var(--white);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-100);
+    overflow: hidden;
+    transition: all var(--transition);
+}
+
+.faq-item[open] {
+    border-color: var(--gold);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    cursor: pointer;
+    list-style: none;
+    gap: 16px;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+}
+
+.faq-toggle {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.faq-toggle::before,
+.faq-toggle::after {
+    content: '';
+    position: absolute;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle::before {
+    width: 14px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.faq-toggle::after {
+    width: 2px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.faq-item[open] .faq-toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-answer {
+    padding: 0 24px 20px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.faq-answer ul {
+    margin: 12px 0;
+    padding-left: 20px;
+}
+
+.faq-answer li {
+    margin-bottom: 6px;
+}
+
+.faq-answer a {
+    color: var(--gold-dark);
+    font-weight: 600;
+}
+
+.faq-answer a:hover {
+    color: var(--gold);
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ============================================
    ANIMATIONS
    ============================================ */
 .fade-in {
